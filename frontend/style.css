@@ -1026,6 +1026,8 @@ nav {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 20px; /* Thêm khoảng trống khi màn hình nhỏ */
+    overflow-y: auto; /* Cho phép cuộn cả modal nếu cần */
 }
 
 .modal-content {
@@ -1033,10 +1035,14 @@ nav {
     padding: 32px;
     border-radius: 20px;
     width: 420px;
-    max-width: 90%;
+    max-width: 100%; /* Đảm bảo không rộng quá màn hình */
+    max-height: 90vh; /* Không cao quá 90% màn hình */
+    overflow-y: auto; /* Tự động hiện thanh cuộn nếu nội dung quá dài */
     border: 1px solid var(--border);
     box-shadow: var(--shadow-lg);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-content::before {
@@ -1201,6 +1207,20 @@ nav {
     
     .result-display h1 {
         font-size: 1.5rem;
+    }
+
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .modal-btns {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
     }
 }
 
